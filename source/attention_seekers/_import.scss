@@ -1,0 +1,53 @@
+// /*------------------------------------*\
+//     Attention seekers
+// \*------------------------------------*/
+
+// **
+// * Use: @include bounce($selector, $animation, $bounce_max_height)
+// * $bounce_height: 30px by default
+// */
+@import "bounce";
+
+// **
+// * Use: @include flash($selector, $animation, $number_of_flashs, $min_flash_opacity)
+// * $number_of_flashs : 2 by default
+// * $min_flash_opacity: 0 by default
+// */
+@import "flash";
+
+// **
+// * Use: @include pulse($selector, $animation, $number_of_pulse, $pulse_scale)
+// * $number_of_pulse: 1 by default
+// * $pulse_scale    : 1.1 by default
+// */
+@import "pulse";
+
+// **
+// * Use: @include shake($selector, $animation, $number_of_shake, $shake_amplitude)
+// * $number_of_shake  : 4 by default
+// * $shake_s_amplitude: 10px by default
+// */
+@import "shake";
+
+// **
+// * Use: @include swing($selector, $animation, $number_of_swing, $swing_degree)
+// * $number_of_swing: 5 by default
+// * $swing_degree   : 15deg by default
+// */
+@import "swing";
+
+// **
+// * Use: @include tada($selector, $animation, $number_of_tada, $tada_adding_scale, $tada_degree)
+// * $number_of_tada   : 4 by default
+// * $tada_adding_scale: 0.1 by default
+// * $tada_degree      : 3deg by default
+// */
+@import "tada";
+
+// **
+// * Use: @include wobble($selector, $animation, $number_of_wobble, $wobble_amplitude, $wobble_degree)
+// * $number_of_wobble: 2 by default
+// * $wobble_amplitude: 25% by default
+// * $wobble_degree   : 5deg by default
+// */
+@import "wobble";

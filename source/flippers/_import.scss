@@ -1,0 +1,34 @@
+// /*------------------------------------*\
+//     Fading exits
+// \*------------------------------------*/
+
+// **
+// * Use: @include flip($selector, $animation, $flip_perspective, $flip_translateZ)
+// * $flip_perspective: 400px by default
+// * $flip_translateZ : 150px by default
+// */
+@import "flip";
+
+// **
+// * Use: @include flipInX($selector, $animation, $flip_perspective)
+// * $flip_perspective: 400px by default
+// */
+@import "flipInX";
+
+// **
+// * Use: @include flipInY($selector, $animation, $flip_perspective)
+// * $flip_perspective: 400px by default
+// */
+@import "flipInY";
+
+// **
+// * Use: @include flipOutX($selector, $animation, $flip_perspective)
+// * $flip_perspective: 400px by default
+// */
+@import "flipOutX";
+
+// **
+// * Use: @include flipOutY($selector, $animation, $flip_perspective)
+// * $flip_perspective: 400px by default
+// */
+@import "flipOutY";

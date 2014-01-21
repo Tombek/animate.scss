@@ -1,0 +1,65 @@
+@mixin swing( $selector, $animation: $default-animation, $nb_swings : 5, $swing_degree: 15deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "swing" + $nb_swings + "-" + $swing_degree;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+    
+    $steps: $swing_degree / ($nb_swings - 2);
+    $step_value: 100/$nb_swings;
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name} {
+            $last_step: 0;
+
+            @for $i from 0 through ($nb_swings) {
+                $sign: '';
+                @if( $i % 2 == 0 ){ $sign: '-'; }
+
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i == $nb_swings ){
+                        -webkit-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                    }
+                    @else if( $i == $nb_swings - 1 ){
+                        -webkit-transform: rotate(#{$sign}#{$last_step/2});
+                                transform: rotate(#{$sign}#{$last_step/2});
+
+                    }
+                    @else{
+                        -webkit-transform: rotate(#{$sign}#{$swing_degree - (($i - 1) * $steps)});
+                                transform: rotate(#{$sign}#{$swing_degree - (($i - 1) * $steps)});
+                        $last_step: $swing_degree - (($i - 1) * $steps);
+                    }
+                }
+            }
+        }
+
+        @keyframes #{$animation-name} {
+            $last_step: 0;
+
+            @for $i from 0 through ($nb_swings) {
+                $sign: '';
+                @if( $i % 2 == 0 ){ $sign: '-'; }
+
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i == $nb_swings ){
+                        -webkit-transform: rotate(0deg);
+                            -ms-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                    }
+                    @else if( $i == $nb_swings - 1 ){
+                        -webkit-transform: rotate(#{$sign}#{$last_step/2});
+                            -ms-transform: rotate(#{$sign}#{$last_step/2});
+                                transform: rotate(#{$sign}#{$last_step/2});
+
+                    }
+                    @else{
+                        -webkit-transform: rotate(#{$sign}#{$swing_degree - (($i - 1) * $steps)});
+                            -ms-transform: rotate(#{$sign}#{$swing_degree - (($i - 1) * $steps)});
+                                transform: rotate(#{$sign}#{$swing_degree - (($i - 1) * $steps)});
+                        $last_step: $swing_degree - (($i - 1) * $steps);
+                    }
+                }
+            }
+        }
+    }
+}

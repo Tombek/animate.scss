@@ -1,0 +1,142 @@
+$default-animation: "1000ms ease 0ms 1 normal both";
+
+@import "mixins";
+
+// /*------------------------------------*\
+//     Commons parameters
+// \*------------------------------------*/
+// **
+// * Each mixin begins with the same two parameter:
+// *
+// * $selector: element on wich apply animation (class, id, or extend-only (%))
+// * $animation: insert default parameters of an animation or 'default' to use animate.css animation parameters
+// * 		"duration timing-function delay iteration-count direction fill-mode play-state"
+// *
+// * Other parameters are specific to each mixin
+// */
+
+// **
+// * Custom animations import
+// */
+@import "_custom/import";
+
+// **
+// * Attention seekers import & demos
+// */
+@import "attention_seekers/import";
+
+// @include bounce(".demo", 'default', 150px);
+// @include flash(".demo", 'default', 3, 0.5);
+// @include pulse(".demo", 'default', 3, 1.5);
+// @include shake(".demo", 'default', 1, 5px);
+// @include swing(".demo", 'default', 10, 10deg);
+// @include tada(".demo", 'default', 3, 0.25, 15deg);
+// @include wobble(".demo", 'default', 5, 50%, 15deg);
+
+// **
+// * Bouncing entrances import & demos
+// */
+
+ @import "bouncing_entrances/import";
+
+// @include bounceIn(".demo");
+// @include bounceInDown(".demo");
+// @include bounceInLeft(".demo");
+// @include bounceInRight(".demo");
+// @include bounceInUp(".demo");
+
+// **
+// * Bouncing exits import & demos
+// */
+
+ @import "bouncing_exits/import";
+
+// @include bounceOut(".demo");
+// @include bounceOutDown(".demo");
+// @include bounceOutLeft(".demo");
+// @include bounceOutRight(".demo");
+// @include bounceOutUp(".demo");
+
+// **
+// * Fading entrances import & demos
+// */
+@import "fading_entrances/import";
+
+// @include fadeIn(".demo");
+// @include fadeInDown(".demo");
+// @include fadeInLeft(".demo");
+// @include fadeInRight(".demo");
+// @include fadeInUp(".demo");
+
+// **
+// * Fading exits import & demos
+// */
+@import "fading_exits/import";
+
+// @include fadeOut(".demo");
+// @include fadeOutDown(".demo");
+// @include fadeOutLeft(".demo");
+// @include fadeOutRight(".demo");
+// @include fadeOutUp(".demo");
+
+// **
+// * Flippers import & demos
+// */
+@import "flippers/import";
+
+// @include flip(".demo");
+// @include flipInX(".demo");
+// @include flipInY(".demo");
+// @include flipOutX(".demo");
+// @include flipOutY(".demo");
+
+// **
+// * Lightspeed import & demos
+// */
+@import "lightspeed/import";
+
+// @include lightSpeedIn(".demo", '', 5deg);
+// @include lightSpeedOut(".demo", '', 15deg);
+
+// **
+// * Rotating entrances import & demos
+// */
+@import "rotating_entrances/import";
+
+// @include rotateIn(".demo", '', 90deg);
+// @include rotateInDownLeft(".demo", '', 45deg);
+// @include rotateInDownRight(".demo", '', 45deg);
+// @include rotateInUpLeft(".demo", '', 45deg);
+// @include rotateInUpRight(".demo", '', 45deg);
+
+// **
+// * Rotating exits import & demos
+// */
+@import "rotating_exits/import";
+
+// @include rotateOut(".demo", '', 90deg);
+// @include rotateOutDownLeft(".demo", '', 45deg);
+// @include rotateOutDownRight(".demo", '', 45deg);
+// @include rotateOutUpLeft(".demo", '', 45deg);
+// @include rotateOutUpRight(".demo", '', 45deg);
+
+// **
+// * Sliders import & demos
+// */
+@import "sliders/import";
+
+// @include slideInDown(".demo", '', 100px);
+// @include slideInLeft(".demo", '');
+// @include slideInRight(".demo", '');
+// @include slideOutLeft(".demo", '');
+// @include slideOutRight(".demo", '');
+// @include slideOutUp(".demo", '');
+
+// **
+// * Specials import & demos
+// */
+@import "specials/import";
+
+// @include hinge(".demo", '');
+// @include rollIn(".demo", '', 50deg);
+// @include rollOut(".demo", '', 50deg);

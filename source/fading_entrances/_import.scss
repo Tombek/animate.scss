@@ -1,0 +1,32 @@
+// /*------------------------------------*\
+//     Fading entrances
+// \*------------------------------------*/
+
+// **
+// * Use: @include fadeIn($selector, $animation)
+// */
+@import "fadeIn";
+
+// **
+// * Use: @include fadeInDown($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeInDown";
+
+// **
+// * Use: @include fadeInLeft($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeInLeft";
+
+// **
+// * Use: @include fadeInRight($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeInRight";
+
+// **
+// * Use: @include fadeInUp($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeInUp";

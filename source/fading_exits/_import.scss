@@ -1,0 +1,32 @@
+// /*------------------------------------*\
+//     Fading exits
+// \*------------------------------------*/
+
+// **
+// * Use: @include fadeOut($selector, $animation)
+// */
+@import "fadeOut";
+
+// **
+// * Use: @include fadeOutDown($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeOutDown";
+
+// **
+// * Use: @include fadeOutLeft($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeOutLeft";
+
+// **
+// * Use: @include fadeOutRight($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeOutRight";
+
+// **
+// * Use: @include fadeOutUp($selector, $animation, $fade_translate_amplitude)
+// * $fade_translate_amplitude: 20px by default
+// */
+@import "fadeOutUp";

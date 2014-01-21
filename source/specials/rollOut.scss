@@ -1,0 +1,36 @@
+@mixin rollOut( $selector, $animation: $default-animation, $roll_angle: 120deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "rollOut-" + $roll_angle;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                opacity: 1;
+                -webkit-transform: translateX(0px) rotate(0deg);
+                        transform: translateX(0px) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: translateX(100%) rotate($roll_angle);
+                        transform: translateX(100%) rotate($roll_angle);
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                opacity: 1;
+                -webkit-transform: translateX(0px) rotate(0deg);
+                    -ms-transform: translateX(0px) rotate(0deg);
+                        transform: translateX(0px) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                -webkit-transform: translateX(100%) rotate($roll_angle);
+                    -ms-transform: translateX(100%) rotate($roll_angle);
+                        transform: translateX(100%) rotate($roll_angle);
+            }
+        }
+    }
+}

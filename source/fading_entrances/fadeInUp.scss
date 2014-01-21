@@ -1,0 +1,26 @@
+@mixin fadeInUp( $selector, $animation: $default-animation, $fade_amplitude: 20px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "fadeInUp" + $fade_amplitude;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+              0% {opacity: 0; -webkit-transform: translateY($fade_amplitude);}
+            100% {opacity: 1; -webkit-transform: translateY(0);}
+        }
+        @keyframes #{$animation-name}{
+              0% {
+                opacity: 0;
+                -ms-transform: translateY($fade_amplitude);
+                 -o-transform: translateY($fade_amplitude);
+                    transform: translateY($fade_amplitude);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: translateY(0);
+                 -o-transform: translateY(0);
+                    transform: translateY(0);
+            }
+        }
+    }
+}

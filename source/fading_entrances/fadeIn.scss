@@ -1,0 +1,16 @@
+@mixin fadeIn( $selector, $animation: $default-animation ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "fadeIn";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes #{$animation-name}{
+            0% {opacity: 0; }
+            100% { opacity: 1; }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@mixin slideInDown( $selector, $animation: $default-animation, $slide_size: 2000px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "slideInDown";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                opacity: 0;
+                
+                -webkit-transform: translateY(- $slide_size);
+                        transform: translateY(- $slide_size);
+            }
+
+            100% {
+                opacity: 1;
+
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                opacity: 0;
+                
+                -webkit-transform: translateY(- $slide_size);
+                    -ms-transform: translateY(- $slide_size);
+                        transform: translateY(- $slide_size);
+            }
+
+            100% {
+                opacity: 1;
+
+                -webkit-transform: translateY(0);
+                    -ms-transform: translateY(0);
+                        transform: translateY(0);
+            }
+        }
+    }
+}

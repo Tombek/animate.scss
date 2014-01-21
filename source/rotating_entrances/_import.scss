@@ -1,0 +1,33 @@
+// /*------------------------------------*\
+//     Rotating entrances
+// \*------------------------------------*/
+
+// **
+// * Use: @include rotateIn($selector, $animation, $rotate_angle)
+// * $rotate_angle: -200deg by default
+// */
+@import "rotateIn";
+
+// **
+// * Use: @include rotateInDownLeft($selector, $animation, $rotate_angle)
+// * $rotate_angle: 90deg by default
+// */
+@import "rotateInDownLeft";
+
+// **
+// * Use: @include rotateInDownRight($selector, $animation, $rotate_angle)
+// * $rotate_angle: 90deg by default
+// */
+@import "rotateInDownRight";
+
+// **
+// * Use: @include rotateInUpLeft($selector, $animation, $rotate_angle)
+// * $rotate_angle: 90deg by default
+// */
+@import "rotateInUpLeft";
+
+// **
+// * Use: @include rotateInUpRight($selector, $animation, $rotate_angle)
+// * $rotate_angle: 90deg by default
+// */
+@import "rotateInUpRight";

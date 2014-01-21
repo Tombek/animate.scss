@@ -1,0 +1,54 @@
+@mixin rotateOutDownLeft( $selector, $animation: $default-animation, $rotate_angle: 90deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "rotateOutDownLeft";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                -webkit-transform-origin: left bottom;
+                        transform-origin: left bottom;
+
+                -webkit-transform: rotate(0);
+                        transform: rotate(0);
+
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform-origin: left bottom;
+                        transform-origin: left bottom;
+
+                -webkit-transform: rotate($rotate_angle);
+                        transform: rotate($rotate_angle);
+
+                opacity: 0;
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                -webkit-transform-origin: left bottom;
+                    -ms-transform-origin: left bottom;
+                        transform-origin: left bottom;
+
+                -webkit-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                        transform: rotate(0);
+
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform-origin: left bottom;
+                    -ms-transform-origin: left bottom;
+                        transform-origin: left bottom;
+
+                -webkit-transform: rotate($rotate_angle);
+                    -ms-transform: rotate($rotate_angle);
+                        transform: rotate($rotate_angle);
+
+                opacity: 0;
+            }
+        }
+    }
+}

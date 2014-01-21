@@ -1,0 +1,69 @@
+// /*------------------------------------*\
+//     Mixins & Functions
+// \*------------------------------------*/
+
+// **
+// * Empty array to store names of already created animations
+// */
+$created-keyframes: ();
+
+// **
+// * Mixin use to check if the keyframe is not already create and apply animation to selector
+// */
+@mixin create-animation( $sel, $name, $anim){
+
+    @if index($created-keyframes, $name) == false {
+        @content;
+
+        $created-keyframes: append($created-keyframes, $name, comma) !global;
+    }
+
+    #{$sel}{
+        -webkit-animation: unquote($name + " " + $anim);
+                animation: unquote($name + " " + $anim);
+    }
+}
+
+// **
+// * Replace chars in a string
+// * From the project Sassy-Strings by Hugo Giraudel
+// * https://github.com/Team-Sass/Sassy-Strings
+// */
+@function str-replace($string, $old, $new: '', $case-sensitive: true) {
+    @if type-of($string) != string or type-of($old) != string or type-of($new) != string {
+        @warn "One of the 3 arguments is not a string.";
+        @return $string;
+    }
+
+    @if str-index($new, $old) != 0 {
+        @warn "The string to be replaced is contained in the new string. Infinite recursion avoided.";
+        @return $string;
+    }
+
+    $index: if(not $case-sensitive, str-index(to-lower-case($string), to-lower-case($old)),  str-index($string, $old));
+
+    @if $index > 0 and $new != $old {
+        $result: quote(str-slice($string, 1, $index - 1));
+
+        @for $i from $index through str-length($string) {
+            @if $i < $index or $i >= $index + str-length($old) {
+                $result: $result + str-slice($string, $i, $i);
+            }
+        }
+
+        @return quote(str-replace(str-insert($result, $new, $index), $old, $new, $case-sensitive)); 
+    }
+
+    @return $string;
+}
+
+// **
+// * Replace multiple chars in a string
+// */
+@function remove_chars($str, $list_chars, $new_char){
+    $tmp: $str;
+    @each $char in $list_chars {
+        $tmp: str-replace($tmp, $char, '_');
+    }
+    @return $tmp;
+}

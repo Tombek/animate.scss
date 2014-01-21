@@ -1,0 +1,37 @@
+@mixin fadeInRight( $selector, $animation: $default-animation, $fade_amplitude: 20px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "fadeInRight" + $fade_amplitude;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name} {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateX($fade_amplitude);
+                        transform: translateX($fade_amplitude);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                        transform: translateX(0);
+            }
+        }
+
+        @keyframes #{$animation-name} {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateX($fade_amplitude);
+                    -ms-transform: translateX($fade_amplitude);
+                        transform: translateX($fade_amplitude);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                        transform: translateX(0);
+            }
+        }
+    }
+}

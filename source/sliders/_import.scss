@@ -1,0 +1,39 @@
+// /*------------------------------------*\
+//     Sliders
+// \*------------------------------------*/
+
+// **
+// * Use: @include slideInDown($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideInDown";
+
+// **
+// * Use: @include slideInLeft($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideInLeft";
+
+// **
+// * Use: @include slideInRight($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideInRight";
+
+// **
+// * Use: @include slideOutLeft($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideOutLeft";
+
+// **
+// * Use: @include slideOutRight($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideOutRight";
+
+// **
+// * Use: @include slideOutUp($selector, $animation, $slide_size)
+// * $slide_size: 2000px by default
+// */
+@import "slideOutUp";

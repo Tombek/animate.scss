@@ -1,0 +1,28 @@
+// /*------------------------------------*\
+//     Bouncing entrances
+// \*------------------------------------*/
+
+// **
+// * Use: @include bounceIn($selector, $animation)
+// */
+@import "bounceIn";
+
+// **
+// * Use: @include bounceInDown($selector, $animation)
+// */
+@import "bounceInDown";
+
+// **
+// * Use: @include bounceInLeft($selector, $animation)
+// */
+@import "bounceInLeft";
+
+// **
+// * Use: @include bounceInRight($selector, $animation)
+// */
+@import "bounceInRight";
+
+// **
+// * Use: @include bounceInUp($selector, $animation)
+// */
+@import "bounceInUp";

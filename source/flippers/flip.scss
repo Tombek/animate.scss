@@ -1,0 +1,95 @@
+@mixin flip( $selector, $animation: $default-animation, $flip_perspective: 400px, $flip_translateZ: 150px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "flip-" + $flip_perspective + "-" + $flip_translateZ;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);
+                
+                -webkit-animation-timing-function: ease-out;
+                        animation-timing-function: ease-out;
+            }
+
+            40% {
+                -webkit-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(170deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(170deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-out;
+                        animation-timing-function: ease-out;
+            }
+
+            50% {
+                -webkit-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(190deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(190deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+
+            80% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(.95);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(.95);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+
+            100% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);
+                    -ms-transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);
+                
+                -webkit-animation-timing-function: ease-out;
+                        animation-timing-function: ease-out;
+            }
+
+            40% {
+                -webkit-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(170deg) scale(1);
+                    -ms-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(170deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(170deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-out;
+                        animation-timing-function: ease-out;
+            }
+
+            50% {
+                -webkit-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(190deg) scale(1);
+                    -ms-transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(190deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ($flip_translateZ) rotateY(190deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+
+            80% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(.95);
+                    -ms-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(.95);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(.95);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+
+            100% {
+                -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(1);
+                    -ms-transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(1);
+                        transform: perspective($flip_perspective) translateZ(0) rotateY(360deg) scale(1);
+                
+                -webkit-animation-timing-function: ease-in;
+                        animation-timing-function: ease-in;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// /*------------------------------------*\
+//     Lightspeed
+// \*------------------------------------*/
+
+// **
+// * Use: @include lightSpeedIn($selector, $animation, $lightSpeed_angle)
+// * $lightSpeed_angle: 30deg by default
+// */
+@import "lightSpeedIn";
+
+// **
+// * Use: @include lightSpeedOut($selector, $animation, $lightSpeed_angle)
+// * $lightSpeed_angle: 30deg by default
+// */
+@import "lightSpeedOut";

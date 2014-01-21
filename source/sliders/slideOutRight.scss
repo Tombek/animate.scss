@@ -1,0 +1,40 @@
+@mixin slideOutRight( $selector, $animation: $default-animation, $slide_size: 2000px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "slideOutRight";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                opacity: 1;
+                
+                -webkit-transform: translateX(0);
+                        transform: translateX(0);
+            }
+
+            100% {
+                opacity: 0;
+
+                -webkit-transform: translateX($slide_size);
+                        transform: translateX($slide_size);
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                opacity: 1;
+                
+                -webkit-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                        transform: translateX(0);
+            }
+
+            100% {
+                opacity: 0;
+
+                -webkit-transform: translateX($slide_size);
+                    -ms-transform: translateX($slide_size);
+                        transform: translateX($slide_size);
+            }
+        }
+    }
+}

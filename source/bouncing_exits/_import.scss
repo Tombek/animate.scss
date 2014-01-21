@@ -1,0 +1,28 @@
+// /*------------------------------------*\
+//     Bouncing exits
+// \*------------------------------------*/
+
+// **
+// * Use: @include bounceOut($selector, $animation)
+// */
+@import "bounceOut";
+
+// **
+// * Use: @include bounceOutDown($selector, $animation)
+// */
+@import "bounceOutDown";
+
+// **
+// * Use: @include bounceOutLeft($selector, $animation)
+// */
+@import "bounceOutLeft";
+
+// **
+// * Use: @include bounceOutRight($selector, $animation)
+// */
+@import "bounceOutRight";
+
+// **
+// * Use: @include bounceOutUp($selector, $animation)
+// */
+@import "bounceOutUp";

@@ -1,0 +1,58 @@
+@mixin flipInX( $selector, $animation: $default-animation, $flip_perspective: 400px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "flipInX-" + $flip_perspective;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: perspective($flip_perspective) rotateX(90deg);
+                        transform: perspective($flip_perspective) rotateX(90deg);
+                opacity: 0;
+            }
+
+            40% {
+                -webkit-transform: perspective($flip_perspective) rotateX(-10deg);
+                        transform: perspective($flip_perspective) rotateX(-10deg);
+            }
+
+            70% {
+                -webkit-transform: perspective($flip_perspective) rotateX(10deg);
+                        transform: perspective($flip_perspective) rotateX(10deg);
+            }
+
+            100% {
+                -webkit-transform: perspective($flip_perspective) rotateX(0deg);
+                        transform: perspective($flip_perspective) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: perspective($flip_perspective) rotateX(90deg);
+                    -ms-transform: perspective($flip_perspective) rotateX(90deg);
+                        transform: perspective($flip_perspective) rotateX(90deg);
+                opacity: 0;
+            }
+
+            40% {
+                -webkit-transform: perspective($flip_perspective) rotateX(-10deg);
+                    -ms-transform: perspective($flip_perspective) rotateX(-10deg);
+                        transform: perspective($flip_perspective) rotateX(-10deg);
+            }
+
+            70% {
+                -webkit-transform: perspective($flip_perspective) rotateX(10deg);
+                    -ms-transform: perspective($flip_perspective) rotateX(10deg);
+                        transform: perspective($flip_perspective) rotateX(10deg);
+            }
+
+            100% {
+                -webkit-transform: perspective($flip_perspective) rotateX(0deg);
+                    -ms-transform: perspective($flip_perspective) rotateX(0deg);
+                        transform: perspective($flip_perspective) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+    }
+}

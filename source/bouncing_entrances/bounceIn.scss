@@ -1,0 +1,58 @@
+@mixin bounceIn( $selector, $animation: $default-animation ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "bounceIn";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(.3);
+                        transform: scale(.3);
+            }
+
+            50% {
+                opacity: 1;
+                -webkit-transform: scale(1.05);
+                        transform: scale(1.05);
+            }
+
+            70% {
+                -webkit-transform: scale(.9);
+                        transform: scale(.9);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                        transform: scale(1);
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(.3);
+                    -ms-transform: scale(.3);
+                        transform: scale(.3);
+            }
+
+            50% {
+                opacity: 1;
+                -webkit-transform: scale(1.05);
+                    -ms-transform: scale(1.05);
+                        transform: scale(1.05);
+            }
+
+            70% {
+                -webkit-transform: scale(.9);
+                    -ms-transform: scale(.9);
+                        transform: scale(.9);
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                        transform: scale(1);
+            }
+        }
+    }
+}

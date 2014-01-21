@@ -1,0 +1,62 @@
+@mixin lightSpeedIn( $selector, $animation: $default-animation, $lightSpeed_angle: 30deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "lightSpeedIn";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                        transform: translateX(100%) skewX(- $lightSpeed_angle);
+                opacity: 0;
+            }
+
+            60% {
+                -webkit-transform: translateX(-20%) skewX( $lightSpeed_angle);
+                        transform: translateX(-20%) skewX( $lightSpeed_angle);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: translateX(0%) skewX(-($lightSpeed_angle / 2));
+                        transform: translateX(0%) skewX(-($lightSpeed_angle / 2));
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateX(0%) skewX(0deg);
+                        transform: translateX(0%) skewX(0deg);
+                opacity: 1;
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                    -ms-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                        transform: translateX(100%) skewX(- $lightSpeed_angle);
+                opacity: 0;
+            }
+
+            60% {
+                -webkit-transform: translateX(-20%) skewX( $lightSpeed_angle);
+                    -ms-transform: translateX(-20%) skewX( $lightSpeed_angle);
+                        transform: translateX(-20%) skewX( $lightSpeed_angle);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: translateX(0%) skewX(-($lightSpeed_angle / 2));
+                    -ms-transform: translateX(0%) skewX(-($lightSpeed_angle / 2));
+                        transform: translateX(0%) skewX(-($lightSpeed_angle / 2));
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateX(0%) skewX(0deg);
+                    -ms-transform: translateX(0%) skewX(0deg);
+                        transform: translateX(0%) skewX(0deg);
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@mixin default_name( $selector, $animation: $default-animation ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "default_name";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            // **
+            // * Insert -webkit-keyframes here
+            // */
+        }
+        @keyframes #{$animation-name}{
+            // **
+            // * Insert keyframes here
+            // */
+        }
+    }
+}

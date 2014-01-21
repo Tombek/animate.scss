@@ -1,0 +1,57 @@
+@mixin tada( $selector, $animation: $default-animation, $nb_tadas : 4, $tada_scale: 0.1, $tada_rotate: 3deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "tada" + $nb_tadas + "-" + $tada_scale + "-" + $tada_rotate;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+    
+    $steps: $nb_tadas * 2 + 3;
+    $step_value: 100/($steps - 1);
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name} {
+            @for $i from 0 through ($steps - 1) {
+                $sign: '';
+                @if( $i % 2 == 0 ){ $sign: '-'; }
+
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i ==  ($steps - 1)){
+                        -webkit-transform: scale(1) rotate(0deg);
+                                transform: scale(1) rotate(0deg);
+                    }
+                    @else if( $i == 1 or $i == 2 ){
+                        -webkit-transform: scale(1 - $tada_scale) rotate(- $tada_rotate);
+                                transform: scale(1 - $tada_scale) rotate(- $tada_rotate);
+                    }
+                    @else{
+                        -webkit-transform: scale(1 + $tada_scale) rotate(#{$sign}#{$tada_rotate});
+                                transform: scale(1 + $tada_scale) rotate(#{$sign}#{$tada_rotate});
+                    }
+                }
+            }
+        }
+
+        @keyframes #{$animation-name} {
+            @for $i from 0 through ($steps - 1) {
+                $sign: '';
+                @if( $i % 2 == 0 ){ $sign: '-'; }
+                
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i ==  ($steps - 1)){
+                        -webkit-transform: scale(1) rotate(0deg);
+                            -ms-transform: scale(1) rotate(0deg);
+                                transform: scale(1) rotate(0deg);
+                    }
+                    @else if( $i == 1 or $i == 2 ){
+                        -webkit-transform: scale(1 - $tada_scale) rotate(- $tada_rotate);
+                            -ms-transform: scale(1 - $tada_scale) rotate(- $tada_rotate);
+                                transform: scale(1 - $tada_scale) rotate(- $tada_rotate);
+                    }
+                    @else{
+                        -webkit-transform: scale(1 + $tada_scale) rotate(#{$sign}#{$tada_rotate});
+                            -ms-transform: scale(1 + $tada_scale) rotate(#{$sign}#{$tada_rotate});
+                                transform: scale(1 + $tada_scale) rotate(#{$sign}#{$tada_rotate});
+                    }
+                }
+            }
+        }
+    }
+}

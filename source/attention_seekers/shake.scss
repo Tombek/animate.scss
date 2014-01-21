@@ -1,0 +1,51 @@
+@mixin shake( $selector, $animation: $default-animation, $nb_shakes : 4, $shake_amplitude: 10px ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "shake" + $nb_shakes + "-" + $shake_amplitude;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+    
+    $steps: $nb_shakes * 2 + 3;
+    $step_value: 100/($steps - 1);
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name} {
+            @for $i from 0 through ($steps - 1) {
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i ==  ($steps - 1)){
+                        -webkit-transform: translateX(0);
+                                transform: translateX(0);
+                    }
+                    @else if( $i % 2 == 0  ){
+                        -webkit-transform: translateX($shake_amplitude);
+                                transform: translateX($shake_amplitude);
+                    }
+                    @else{
+                        -webkit-transform: translateX(- $shake_amplitude);
+                                transform: translateX(- $shake_amplitude);
+                    }
+                }
+            }
+        }
+
+        @keyframes #{$animation-name} {
+            @for $i from 0 through ($steps - 1) {
+                #{$i * $step_value * 1%}{
+                    @if( $i == 0 or $i ==  ($steps - 1)){
+                        -webkit-transform: translateX(0);
+                            -ms-transform: translateX(0);
+                                transform: translateX(0);
+                    }
+                    @else if( $i % 2 == 0  ){
+                        -webkit-transform: translateX($shake_amplitude);
+                            -ms-transform: translateX($shake_amplitude);
+                                transform: translateX($shake_amplitude);
+                    }
+                    @else{
+                        -webkit-transform: translateX(- $shake_amplitude);
+                            -ms-transform: translateX(- $shake_amplitude);
+                                transform: translateX(- $shake_amplitude);
+                    }
+                }
+            }
+        }
+    }
+}

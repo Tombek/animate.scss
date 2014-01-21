@@ -1,0 +1,36 @@
+@mixin lightSpeedOut( $selector, $animation: $default-animation, $lightSpeed_angle: 30deg ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "lightSpeedOut";
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: translateX(0%) skewX(0deg);
+                        transform: translateX(0%) skewX(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                        transform: translateX(100%) skewX(- $lightSpeed_angle);
+                opacity: 0;
+            }
+        }
+        @keyframes #{$animation-name}{
+            0% {
+                -webkit-transform: translateX(0%) skewX(0deg);
+                    -ms-transform: translateX(0%) skewX(0deg);
+                        transform: translateX(0%) skewX(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                    -ms-transform: translateX(100%) skewX(- $lightSpeed_angle);
+                        transform: translateX(100%) skewX(- $lightSpeed_angle);
+                opacity: 0;
+            }
+        }
+    }
+}

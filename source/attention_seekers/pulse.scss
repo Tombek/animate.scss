@@ -1,0 +1,43 @@
+@mixin pulse( $selector, $animation: $default-animation, $nb_pulses : 1, $pulse_scale: 1.1 ){
+    @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
+    $animation-name: "pulse" + $nb_pulses + "-" + $pulse_scale;
+    $animation-name: remove_chars($animation-name, ("." ","), "_");
+    
+    $steps: $nb_pulses * 2 + 1;
+    $step_value: 100/($nb_pulses*2);
+
+    @include create-animation($selector, $animation-name, $animation){
+        @-webkit-keyframes #{$animation-name} {
+            @for $i from 0 through ($steps - 1) {
+                #{$i * $step_value * 1%}{
+                    @if( $i % 2 == 0 ){
+                        -webkit-transform: scale(1);
+                                transform: scale(1);
+                    }
+                    @else{
+                        -webkit-transform: scale($pulse_scale);
+                                transform: scale($pulse_scale);
+                    }
+                }
+            }
+        }
+
+        @keyframes #{$animation-name} {
+
+            @for $i from 0 through ($steps - 1) {
+                #{$i * $step_value * 1%}{
+                    @if( $i % 2 == 0 ){
+                        -webkit-transform: scale(1);
+                            -ms-transform: scale(1);
+                                transform: scale(1);
+                    }
+                    @else{
+                        -webkit-transform: scale($pulse_scale);
+                            -ms-transform: scale($pulse_scale);
+                                transform: scale($pulse_scale);
+                    }
+                }
+            }
+        }
+    }
+}
