@@ -1,33 +1,31 @@
 # animate.scss
-__A port of the core animate.css lib to Sass.__
+__Animate.css but customizable.__
 
-CSS toolkit of CSS animations (http://daneden.me/animate) converted to Sass
+`animate.scss` is a bunch of cool, fun, and cross-browser animations create by Daneden (<http://daneden.me/animate>). Unfortunatly, it doesn't allow you to create custom animations, based on animate.css animations using simple parameters.
 
-`animate.scss` is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
+You don't want to add all animations from animate.css in your project when you use only 2 or 3 of them? You want to use animations from animate.css but want to be able to change some parameters on the fly? Animate.scss is made for you.
 
 ## Usage
-To use animate.css in your website, simply drop the stylesheet into your document's `<head>`, and add the class `animated` to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!
-
-You can do a whole bunch of other stuff with animate.css when you combine it with jQuery or add your own CSS rules. Dynamically add animations using jQuery with ease:
 
 ```
-$('#yourElement').addClass('animated bounceOutLeft');
+@include fadeIn($selector, $animation, $parameter, [$other_parameter, ...]);
 ```
 
-You can change the duration of your animations, add a delay or change the number of times that it plays!
+`fadeIn` is the name of the animate.css animation you want to use.
 
-```
-#yourElement {
-	-vendor-animation-duration: 3s;
-	-vendor-animation-delay: 2s;
-	-vendor-animation-iteration-count: infinite;
-}
-```
+`$selector` represent the selector on wich apply the animation. It can be #id, .class or even %extend in Sass.
 
-*Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, ms, o)*
+`$animation` represent string use in CSS3 animation property value, without animation-name property. (example: "1000ms ease 0ms 1 normal both"). Here's [some](http://www.w3schools.com/cssref/css3_pr_animation.asp) [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/animation).
+
+`$parameter` represent parameters of the given animation. See wiki for a list of parameters for each animation of animate.css.
+
+## Custom animations
+
+Want to add your animation in animate.scss? There is a folder for that.
+
+Add your custom animation in folder `source/_custom` using `default_animation.scss` as model. Then, import it in `source/_custom/_import.scss` file and you're good to go.
+
+### Any suggestion? Go for it!
 
 ## License
 Animate.css is licensed under the &#9786; license. (http://licence.visualidiot.com/)
-
-## Learn more
-You can learn more about animate.css over at http://daneden.me/animate
