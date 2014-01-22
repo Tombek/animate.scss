@@ -27,6 +27,3 @@ Want to add your animation in animate.scss? There is a folder for that.
 Add your custom animation in folder `source/_custom` using `default_animation.scss` as model. Then, import it in `source/_custom/_import.scss` file and you're good to go.
 
 ### Any suggestion? Go for it!
-
-## License
-Animate.css is licensed under the &#9786; license. (http://licence.visualidiot.com/)
