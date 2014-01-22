@@ -16,6 +16,7 @@ You don't want to add all animations from animate.css in your project when you u
 `$selector` represent the selector on wich apply the animation. It can be #id, .class or even %extend in Sass.
 
 `$animation` represent string use in CSS3 animation property value, without animation-name property. (example: "1000ms ease 0ms 1 normal both"). Here's [some](http://www.w3schools.com/cssref/css3_pr_animation.asp) [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/animation).
+You can also use the default animate.css value using the string "default".
 
 `$parameter` represent parameters of the given animation. See wiki for a list of parameters for each animation of animate.css.
 
