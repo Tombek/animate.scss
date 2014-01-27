@@ -25,13 +25,15 @@ $default-animation: "1000ms ease 0ms 1 normal both";
 // */
 @import "attention_seekers/import";
 
-// @include bounce(".demo", 'default', 150px);
-// @include flash(".demo", 'default', 3, 0.5);
-// @include pulse(".demo", 'default', 3, 1.5);
-// @include shake(".demo", 'default', 1, 5px);
-// @include swing(".demo", 'default', 10, 10deg);
-// @include tada(".demo", 'default', 3, 0.25, 15deg);
-// @include wobble(".demo", 'default', 5, 50%, 15deg);
+// .demo{
+//     @include bounce('default', 150px);
+//     @include flash('default', 3, 0.5);
+//     @include pulse('default', 3, 1.5);
+//     @include shake('default', 1, 5px);
+//     @include swing('default', 10, 10deg);
+//     @include tada('default', 3, 0.25, 15deg);
+//     @include wobble('default', 5, 50%, 15deg);
+// }
 
 // **
 // * Bouncing entrances import & demos
@@ -39,11 +41,13 @@ $default-animation: "1000ms ease 0ms 1 normal both";
 
  @import "bouncing_entrances/import";
 
-// @include bounceIn(".demo");
-// @include bounceInDown(".demo");
-// @include bounceInLeft(".demo");
-// @include bounceInRight(".demo");
-// @include bounceInUp(".demo");
+// .demo{
+//     @include bounceIn();
+//     @include bounceInDown();
+//     @include bounceInLeft();
+//     @include bounceInRight();
+//     @include bounceInUp();
+// }
 
 // **
 // * Bouncing exits import & demos
@@ -51,92 +55,110 @@ $default-animation: "1000ms ease 0ms 1 normal both";
 
  @import "bouncing_exits/import";
 
-// @include bounceOut(".demo");
-// @include bounceOutDown(".demo");
-// @include bounceOutLeft(".demo");
-// @include bounceOutRight(".demo");
-// @include bounceOutUp(".demo");
+// .demo{
+//     @include bounceOut();
+//     @include bounceOutDown();
+//     @include bounceOutLeft();
+//     @include bounceOutRight();
+//     @include bounceOutUp();
+// }
 
 // **
 // * Fading entrances import & demos
 // */
 @import "fading_entrances/import";
 
-// @include fadeIn(".demo");
-// @include fadeInDown(".demo");
-// @include fadeInLeft(".demo");
-// @include fadeInRight(".demo");
-// @include fadeInUp(".demo");
+// .demo{
+//     @include fadeIn();
+//     @include fadeInDown();
+//     @include fadeInLeft();
+//     @include fadeInRight();
+//     @include fadeInUp();
+// }
 
 // **
 // * Fading exits import & demos
 // */
 @import "fading_exits/import";
 
-// @include fadeOut(".demo");
-// @include fadeOutDown(".demo");
-// @include fadeOutLeft(".demo");
-// @include fadeOutRight(".demo");
-// @include fadeOutUp(".demo");
+// .demo{
+//     @include fadeOut();
+//     @include fadeOutDown();
+//     @include fadeOutLeft();
+//     @include fadeOutRight();
+//     @include fadeOutUp();
+// }
 
 // **
 // * Flippers import & demos
 // */
 @import "flippers/import";
 
-// @include flip(".demo");
-// @include flipInX(".demo");
-// @include flipInY(".demo");
-// @include flipOutX(".demo");
-// @include flipOutY(".demo");
+// .demo{
+//     @include flip();
+//     @include flipInX();
+//     @include flipInY();
+//     @include flipOutX();
+//     @include flipOutY();
+// }
 
 // **
 // * Lightspeed import & demos
 // */
 @import "lightspeed/import";
 
-// @include lightSpeedIn(".demo", '', 5deg);
-// @include lightSpeedOut(".demo", '', 15deg);
+// .demo{
+//     @include lightSpeedIn('default', 5deg);
+//     @include lightSpeedOut('default', 15deg);
+// }
 
 // **
 // * Rotating entrances import & demos
 // */
 @import "rotating_entrances/import";
 
-// @include rotateIn(".demo", '', 90deg);
-// @include rotateInDownLeft(".demo", '', 45deg);
-// @include rotateInDownRight(".demo", '', 45deg);
-// @include rotateInUpLeft(".demo", '', 45deg);
-// @include rotateInUpRight(".demo", '', 45deg);
+// .demo{
+//     @include rotateIn('default', 90deg);
+//     @include rotateInDownLeft('default', 45deg);
+//     @include rotateInDownRight('default', 45deg);
+//     @include rotateInUpLeft('default', 45deg);
+//     @include rotateInUpRight('default', 45deg);
+// }
 
 // **
 // * Rotating exits import & demos
 // */
 @import "rotating_exits/import";
 
-// @include rotateOut(".demo", '', 90deg);
-// @include rotateOutDownLeft(".demo", '', 45deg);
-// @include rotateOutDownRight(".demo", '', 45deg);
-// @include rotateOutUpLeft(".demo", '', 45deg);
-// @include rotateOutUpRight(".demo", '', 45deg);
+// .demo{
+//     @include rotateOut('default', 90deg);
+//     @include rotateOutDownLeft('default', 45deg);
+//     @include rotateOutDownRight('default', 45deg);
+//     @include rotateOutUpLeft('default', 45deg);
+//     @include rotateOutUpRight('default', 45deg);
+// }
 
 // **
 // * Sliders import & demos
 // */
 @import "sliders/import";
 
-// @include slideInDown(".demo", '', 100px);
-// @include slideInLeft(".demo", '');
-// @include slideInRight(".demo", '');
-// @include slideOutLeft(".demo", '');
-// @include slideOutRight(".demo", '');
-// @include slideOutUp(".demo", '');
+// .demo{
+//     @include slideInDown('default', 100px);
+//     @include slideInLeft('default');
+//     @include slideInRight('default');
+//     @include slideOutLeft('default');
+//     @include slideOutRight('default');
+//     @include slideOutUp('default');
+// }
 
 // **
 // * Specials import & demos
 // */
 @import "specials/import";
 
-// @include hinge(".demo", '');
-// @include rollIn(".demo", '', 50deg);
-// @include rollOut(".demo", '', 50deg);
+// .demo{
+//     @include hinge('default');
+//     @include rollIn('default', 50deg);
+//     @include rollOut('default', 50deg);
+// }

@@ -1,9 +1,9 @@
-@mixin slideInRight( $selector, $animation: $default-animation, $slide_size: 2000px ){
+@mixin slideInRight( $animation: $default-animation, $slide_size: 2000px ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "slideInRight";
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 opacity: 0;

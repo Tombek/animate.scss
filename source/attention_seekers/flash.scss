@@ -1,4 +1,4 @@
-@mixin flash( $selector, $animation: $default-animation, $nb_flashs : 2, $min_flash_opacity: 0 ){
+@mixin flash( $animation: $default-animation, $nb_flashs : 2, $min_flash_opacity: 0 ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "flash" + $nb_flashs + "-" + $min_flash_opacity;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
@@ -6,7 +6,7 @@
     $steps: $nb_flashs * 2 + 1;
     $step_value: 100/($nb_flashs*2);
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name} {
             @for $i from 0 through ($steps - 1) {
                 #{$i * $step_value * 1%}{

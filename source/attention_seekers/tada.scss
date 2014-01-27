@@ -1,4 +1,4 @@
-@mixin tada( $selector, $animation: $default-animation, $nb_tadas : 4, $tada_scale: 0.1, $tada_rotate: 3deg ){
+@mixin tada( $animation: $default-animation, $nb_tadas : 4, $tada_scale: 0.1, $tada_rotate: 3deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "tada" + $nb_tadas + "-" + $tada_scale + "-" + $tada_rotate;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
@@ -6,7 +6,7 @@
     $steps: $nb_tadas * 2 + 3;
     $step_value: 100/($steps - 1);
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name} {
             @for $i from 0 through ($steps - 1) {
                 $sign: '';

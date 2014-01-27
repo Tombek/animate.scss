@@ -3,30 +3,30 @@
 // \*------------------------------------*/
 
 // **
-// * Use: @include fadeIn($selector, $animation)
+// * Use: @include fadeIn($animation)
 // */
 @import "fadeIn";
 
 // **
-// * Use: @include fadeInDown($selector, $animation, $fade_translate_amplitude)
+// * Use: @include fadeInDown($animation, $fade_translate_amplitude)
 // * $fade_translate_amplitude: 20px by default
 // */
 @import "fadeInDown";
 
 // **
-// * Use: @include fadeInLeft($selector, $animation, $fade_translate_amplitude)
+// * Use: @include fadeInLeft($animation, $fade_translate_amplitude)
 // * $fade_translate_amplitude: 20px by default
 // */
 @import "fadeInLeft";
 
 // **
-// * Use: @include fadeInRight($selector, $animation, $fade_translate_amplitude)
+// * Use: @include fadeInRight($animation, $fade_translate_amplitude)
 // * $fade_translate_amplitude: 20px by default
 // */
 @import "fadeInRight";
 
 // **
-// * Use: @include fadeInUp($selector, $animation, $fade_translate_amplitude)
+// * Use: @include fadeInUp($animation, $fade_translate_amplitude)
 // * $fade_translate_amplitude: 20px by default
 // */
 @import "fadeInUp";

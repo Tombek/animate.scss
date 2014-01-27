@@ -1,9 +1,9 @@
-@mixin fadeInLeft( $selector, $animation: $default-animation, $fade_amplitude: 20px ){
+@mixin fadeInLeft( $animation: $default-animation, $fade_amplitude: 20px ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "fadeInLeft" + $fade_amplitude;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name} {
               0% {
                 opacity: 0;

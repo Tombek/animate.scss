@@ -1,4 +1,4 @@
-@mixin swing( $selector, $animation: $default-animation, $nb_swings : 5, $swing_degree: 15deg ){
+@mixin swing( $animation: $default-animation, $nb_swings : 5, $swing_degree: 15deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "swing" + $nb_swings + "-" + $swing_degree;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
@@ -6,7 +6,7 @@
     $steps: $swing_degree / ($nb_swings - 2);
     $step_value: 100/$nb_swings;
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name} {
             $last_step: 0;
 

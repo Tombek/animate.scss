@@ -1,9 +1,9 @@
-@mixin rotateOut( $selector, $animation: $default-animation, $rotate_angle: -200deg ){
+@mixin rotateOut( $animation: $default-animation, $rotate_angle: -200deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "rotateOut";
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform-origin: center center;

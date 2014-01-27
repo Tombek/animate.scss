@@ -1,9 +1,9 @@
-@mixin flip( $selector, $animation: $default-animation, $flip_perspective: 400px, $flip_translateZ: 150px ){
+@mixin flip( $animation: $default-animation, $flip_perspective: 400px, $flip_translateZ: 150px ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "flip-" + $flip_perspective + "-" + $flip_translateZ;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform: perspective($flip_perspective) translateZ(0) rotateY(0) scale(1);

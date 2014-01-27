@@ -8,20 +8,20 @@
 $created-keyframes: ();
 
 // **
-// * Mixin use to check if the keyframe is not already create and apply animation to selector
+// * Mixin use to check if the keyframe is not already create and apply animation 
 // */
-@mixin create-animation( $sel, $name, $anim){
+@mixin create-animation( $name, $anim){
 
     @if index($created-keyframes, $name) == false {
-        @content;
+        @at-root {
+            @content;
+        }
 
         $created-keyframes: append($created-keyframes, $name, comma) !global;
     }
 
-    #{$sel}{
-        -webkit-animation: unquote($name + " " + $anim);
-                animation: unquote($name + " " + $anim);
-    }
+    -webkit-animation: unquote($name + " " + $anim);
+            animation: unquote($name + " " + $anim);
 }
 
 // **

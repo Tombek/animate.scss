@@ -1,9 +1,9 @@
-@mixin rollIn( $selector, $animation: $default-animation, $roll_angle: 120deg ){
+@mixin rollIn( $animation: $default-animation, $roll_angle: 120deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "rollIn-" + $roll_angle;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 opacity: 0;

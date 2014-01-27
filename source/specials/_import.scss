@@ -3,18 +3,18 @@
 // \*------------------------------------*/
 
 // **
-// * Use: @include hinge($selector, $animation)
+// * Use: @include hinge($animation)
 // */
 @import "hinge";
 
 // **
-// * Use: @include rollIn($selector, $animation, $roll_angle)
+// * Use: @include rollIn($animation, $roll_angle)
 // * $roll_angle: 120deg by default
 // */
 @import "rollIn";
 
 // **
-// * Use: @include rollOut($selector, $animation, $roll_angle)
+// * Use: @include rollOut($animation, $roll_angle)
 // * $roll_angle: 120deg by default
 // */
 @import "rollOut";

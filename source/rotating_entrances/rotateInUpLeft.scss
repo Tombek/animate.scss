@@ -1,9 +1,9 @@
-@mixin rotateInUpLeft( $selector, $animation: $default-animation, $rotate_angle: 90deg ){
+@mixin rotateInUpLeft( $animation: $default-animation, $rotate_angle: 90deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "rotateInUpLeft";
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform-origin: left bottom;

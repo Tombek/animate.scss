@@ -1,9 +1,9 @@
-@mixin lightSpeedIn( $selector, $animation: $default-animation, $lightSpeed_angle: 30deg ){
+@mixin lightSpeedIn( $animation: $default-animation, $lightSpeed_angle: 30deg ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "lightSpeedIn";
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform: translateX(100%) skewX(- $lightSpeed_angle);

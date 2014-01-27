@@ -1,9 +1,9 @@
-@mixin bounceOutLeft( $selector, $animation: $default-animation ){
+@mixin bounceOutLeft( $animation: $default-animation ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "bounceOutLeft";
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform: translateX(0);

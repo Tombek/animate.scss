@@ -3,31 +3,31 @@
 // \*------------------------------------*/
 
 // **
-// * Use: @include rotateOut($selector, $animation, $rotate_angle)
+// * Use: @include rotateOut($animation, $rotate_angle)
 // * $rotate_angle: -200deg by default
 // */
 @import "rotateOut";
 
 // **
-// * Use: @include rotateOutDownLeft($selector, $animation, $rotate_angle)
+// * Use: @include rotateOutDownLeft($animation, $rotate_angle)
 // * $rotate_angle: 90deg by default
 // */
 @import "rotateOutDownLeft";
 
 // **
-// * Use: @include rotateOutDownRight($selector, $animation, $rotate_angle)
+// * Use: @include rotateOutDownRight($animation, $rotate_angle)
 // * $rotate_angle: 90deg by default
 // */
 @import "rotateOutDownRight";
 
 // **
-// * Use: @include rotateOutUpLeft($selector, $animation, $rotate_angle)
+// * Use: @include rotateOutUpLeft($animation, $rotate_angle)
 // * $rotate_angle: 90deg by default
 // */
 @import "rotateOutUpLeft";
 
 // **
-// * Use: @include rotateOutUpRight($selector, $animation, $rotate_angle)
+// * Use: @include rotateOutUpRight($animation, $rotate_angle)
 // * $rotate_angle: 90deg by default
 // */
 @import "rotateOutUpRight";

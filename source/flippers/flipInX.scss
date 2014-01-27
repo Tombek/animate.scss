@@ -1,9 +1,9 @@
-@mixin flipInX( $selector, $animation: $default-animation, $flip_perspective: 400px ){
+@mixin flipInX( $animation: $default-animation, $flip_perspective: 400px ){
     @if($animation == '' or $animation == 'default'){ $animation: $default-animation }
     $animation-name: "flipInX-" + $flip_perspective;
     $animation-name: remove_chars($animation-name, ("." ","), "_");
 
-    @include create-animation($selector, $animation-name, $animation){
+    @include create-animation($animation-name, $animation){
         @-webkit-keyframes #{$animation-name}{
             0% {
                 -webkit-transform: perspective($flip_perspective) rotateX(90deg);
