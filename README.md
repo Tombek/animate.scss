@@ -11,11 +11,11 @@ Animate.scss output only used animations allowing you to keep a light css file f
 
 ```
 #id, .class, %extend-only{
-    @include fadeIn($animation, $parameter, [$other_parameter, ...]);
+    @include bounce($animation, $parameter, [$other_parameter, ...]);
 }
 ```
 
-`fadeIn` is the name of the animate.css animation you want to use.
+`bounce` is the name of the animate.css animation you want to use.
 
 `$animation` represent string use in CSS3 animation property value, without animation-name property. (example: "1000ms ease 0ms 1 normal both"). Here's [some](http://www.w3schools.com/cssref/css3_pr_animation.asp) [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/animation).
 You can also use the default animate.css value using the string "default".
