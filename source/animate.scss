@@ -6,9 +6,8 @@ $default-animation: "1000ms ease 0ms 1 normal both";
 //     Commons parameters
 // \*------------------------------------*/
 // **
-// * Each mixin begins with the same two parameter:
+// * Each mixin begins with the same parameter:
 // *
-// * $selector: element on wich apply animation (class, id, or extend-only (%))
 // * $animation: insert default parameters of an animation or 'default' to use animate.css animation parameters
 // * 		"duration timing-function delay iteration-count direction fill-mode play-state"
 // *
